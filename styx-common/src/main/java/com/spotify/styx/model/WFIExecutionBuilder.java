@@ -63,9 +63,9 @@ class WFIExecutionBuilder {
     executionList = new ArrayList<>();
   }
 
-  private final EventVisitor visitor = new MyVisitor();
+  private final EventVisitor visitor = new Reducer();
 
-  private class MyVisitor implements EventVisitor<Void> {
+  private class Reducer implements EventVisitor<Void> {
 
     @Override
     public Void timeTrigger(WorkflowInstance workflowInstance) {
@@ -147,6 +147,18 @@ class WFIExecutionBuilder {
       executionStatusList.add(ExecStatus.create(eventTs, message));
 
       closeExecution();
+      return null;
+    }
+
+    @Override
+    public Void enqueue(WorkflowInstance workflowInstance) {
+      currWorkflowInstance = workflowInstance;
+      return null;
+    }
+
+    @Override
+    public Void dequeue(WorkflowInstance workflowInstance) {
+      currWorkflowInstance = workflowInstance;
       return null;
     }
 

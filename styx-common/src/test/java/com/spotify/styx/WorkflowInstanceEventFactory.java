@@ -64,6 +64,14 @@ public class WorkflowInstanceEventFactory {
     return Event.runError(workflowInstance, message);
   }
 
+  public Event enqueue() {
+    return Event.enqueue(workflowInstance);
+  }
+
+  public Event dequeue() {
+    return Event.dequeue(workflowInstance);
+  }
+
   public Event success() {
     return Event.success(workflowInstance);
   }

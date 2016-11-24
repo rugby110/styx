@@ -327,6 +327,16 @@ class KubernetesDockerRunner implements DockerRunner {
     }
 
     @Override
+    public Boolean enqueue(WorkflowInstance workflowInstance) {
+      return false;
+    }
+
+    @Override
+    public Boolean dequeue(WorkflowInstance workflowInstance) {
+      return false;
+    }
+
+    @Override
     public Boolean success(WorkflowInstance workflowInstance) {
       return false;
     }

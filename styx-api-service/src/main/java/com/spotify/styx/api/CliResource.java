@@ -239,6 +239,16 @@ public class CliResource {
     }
 
     @Override
+    public Boolean enqueue(WorkflowInstance workflowInstance) {
+      return Boolean.FALSE;
+    }
+
+    @Override
+    public Boolean dequeue(WorkflowInstance workflowInstance) {
+      return Boolean.FALSE;
+    }
+
+    @Override
     public Boolean success(WorkflowInstance workflowInstance) {
       return Boolean.FALSE;
     }

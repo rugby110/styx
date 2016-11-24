@@ -74,6 +74,16 @@ public final class EventUtil {
     }
 
     @Override
+    public String enqueue(WorkflowInstance workflowInstance) {
+      return "enqueue";
+    }
+
+    @Override
+    public String dequeue(WorkflowInstance workflowInstance) {
+      return "dequeue";
+    }
+
+    @Override
     public String success(WorkflowInstance workflowInstance) {
       return "success";
     }

@@ -136,6 +136,16 @@ class CliUtil {
     }
 
     @Override
+    public String enqueue(WorkflowInstance workflowInstance) {
+      return "Unexpected data";
+    }
+
+    @Override
+    public String dequeue(WorkflowInstance workflowInstance) {
+      return "Unexpected data";
+    }
+
+    @Override
     public String success(WorkflowInstance workflowInstance) {
       return "Unexpected data";
     }
@@ -207,6 +217,16 @@ class CliUtil {
     @Override
     public String runError(WorkflowInstance workflowInstance, String message) {
       return "Error message: " + message;
+    }
+
+    @Override
+    public String enqueue(WorkflowInstance workflowInstance) {
+      return "";
+    }
+
+    @Override
+    public String dequeue(WorkflowInstance workflowInstance) {
+      return "";
     }
 
     @Override

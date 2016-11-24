@@ -54,6 +54,8 @@ public class EventSerializerTest {
     assertRoundtrip(Event.started(INSTANCE1));
     assertRoundtrip(Event.terminate(INSTANCE1, 20));
     assertRoundtrip(Event.runError(INSTANCE1, "ErrorMessage"));
+    assertRoundtrip(Event.enqueue(INSTANCE1));
+    assertRoundtrip(Event.dequeue(INSTANCE1));
     assertRoundtrip(Event.success(INSTANCE1));
     assertRoundtrip(Event.retryAfter(INSTANCE1, 12345));
     assertRoundtrip(Event.retry(INSTANCE1));
