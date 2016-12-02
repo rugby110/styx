@@ -22,7 +22,6 @@ package com.spotify.styx;
 
 import static com.spotify.styx.testdata.TestData.FULL_DATA_ENDPOINT;
 import static java.time.temporal.ChronoUnit.DAYS;
-import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -69,9 +68,7 @@ public class TriggerManagerTest {
 
   @Before
   public void setUp() throws IOException {
-    triggerManager =
-        new TriggerManager(newSingleThreadScheduledExecutor(), triggerListener, MANAGER_TIME,
-            storage);
+    triggerManager = new TriggerManager(triggerListener, MANAGER_TIME, storage);
   }
 
   @Test
