@@ -20,6 +20,7 @@
 
 package com.spotify.styx.state;
 
+import com.google.common.collect.ImmutableMap;
 import com.spotify.styx.model.Event;
 import com.spotify.styx.model.WorkflowId;
 import com.spotify.styx.model.WorkflowInstance;
@@ -56,6 +57,11 @@ public interface StateManager extends Closeable {
    * @throws IsClosed if the state receiver is closed and can not handle events
    */
   void receive(Event event) throws IsClosed;
+
+  /**
+   * Get a map of all active {@link WorkflowInstance} states.
+   */
+  ImmutableMap<WorkflowInstance, RunState> activeStates();
 
   /**
    * Returns the number of current active {@link RunState}.
